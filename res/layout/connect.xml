@@ -3,7 +3,7 @@
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
-              android:background="@drawable/udf_bg"
+              style="@android:style/Widget.Holo.Light"
 >
     <TextView
         android:layout_width="fill_parent"
@@ -12,8 +12,7 @@
         android:paddingTop="13px"
         android:paddingBottom="15px"
         android:gravity="left|center_vertical"
-        android:textColor="#FFFFFF"
-        android:background="#000000"
+        style="@android:style/Widget.Holo.Light"
     />
     <Button
         android:layout_width="fill_parent"
@@ -22,7 +21,7 @@
         android:paddingTop="13px"
         android:paddingBottom="15px"
         android:gravity="left|center_vertical"
-        android:textColor="#000000"
+        style="@android:style/Widget.Holo.Button"
         android:onClick="openFacebook"
     />
     <Button
@@ -32,7 +31,7 @@
         android:paddingTop="13px"
         android:paddingBottom="15px"
         android:gravity="left|center_vertical"
-        android:textColor="#000000"
+        style="@android:style/Widget.Holo.Button"
         android:onClick="openTwitter"
     />
     <Button
@@ -42,7 +41,7 @@
         android:paddingTop="13px"
         android:paddingBottom="15px"
         android:gravity="left|center_vertical"
-        android:textColor="#000000"
+        style="@android:style/Widget.Holo.Button"
     />
     <Button
         android:layout_width="fill_parent"
@@ -51,7 +50,7 @@
         android:paddingTop="13px"
         android:paddingBottom="15px"
         android:gravity="left|center_vertical"
-        android:textColor="#000000"
+        style="@android:style/Widget.Holo.Button"
     />
 </LinearLayout>
 

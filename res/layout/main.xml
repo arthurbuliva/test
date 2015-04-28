@@ -3,17 +3,16 @@
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
-              android:background="@drawable/udf_bg"
+              style="@android:style/Widget.Holo.Light"
 >
-    <TextView
+     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Transforming Kenya"
         android:paddingTop="13px"
         android:paddingBottom="15px"
         android:gravity="left|center_vertical"
-        android:textColor="#FFFFFF"
-        android:background="#000000"
+        style="@android:style/Widget.Holo.Light"
     />
 
     <Button
@@ -23,7 +22,7 @@
         android:paddingTop="13px"
         android:paddingBottom="15px"
         android:gravity="left|center_vertical"
-        android:textColor="#000000"
+        style="@android:style/Widget.Holo.Button"
     />
     <Button
         android:layout_width="fill_parent"
@@ -32,7 +31,7 @@
         android:paddingTop="13px"
         android:paddingBottom="15px"
         android:gravity="left|center_vertical"
-        android:textColor="#000000"
+        style="@android:style/Widget.Holo.Button"
         android:onClick="openMessages"
     />
     <Button
@@ -42,7 +41,7 @@
         android:paddingTop="13px"
         android:paddingBottom="15px"
         android:gravity="left|center_vertical"
-        android:textColor="#000000"
+        style="@android:style/Widget.Holo.Button"
     />
     <Button
         android:layout_width="fill_parent"
@@ -51,16 +50,17 @@
         android:paddingTop="13px"
         android:paddingBottom="15px"
         android:gravity="left|center_vertical"
-        android:textColor="#000000"
+        style="@android:style/Widget.Holo.Button"
     />
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Connect with US"
+        android:text="Connect with Us"
         android:paddingTop="13px"
         android:paddingBottom="15px"
         android:gravity="left|center_vertical"
         android:onClick="openSocialMedia"
+        style="@android:style/Widget.Holo.Button"
     />
     <Button
         android:layout_width="fill_parent"
@@ -69,7 +69,7 @@
         android:paddingTop="13px"
         android:paddingBottom="15px"
         android:gravity="left|center_vertical"
-        android:textColor="#000000"
+        style="@android:style/Widget.Holo.Button"
     />
     <Button
         android:layout_width="fill_parent"
@@ -78,7 +78,7 @@
         android:paddingTop="13px"
         android:paddingBottom="15px"
         android:gravity="left|center_vertical"
-        android:textColor="#000000"
+        style="@android:style/Widget.Holo.Button"
         android:onClick="exitApplication"
     />
 </LinearLayout>
