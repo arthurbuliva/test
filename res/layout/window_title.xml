@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="left"
+    android:background="#323331">
+    <ImageView
+        android:id="@+id/header"
+        android:src="@drawable/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10px"
+        android:paddingBottom="15px"
+        android:background="#000000"
+        />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:text="UDF Party of Kenya"
+        android:paddingTop="13px"
+        android:paddingBottom="15px"
+        android:gravity="left|center_vertical"
+        android:textColor="#FFFFFF"
+        android:background="#000000"
+    />
+</LinearLayout>

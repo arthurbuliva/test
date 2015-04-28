@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@drawable/udf_bg"
+>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Transforming Kenya"
+        android:paddingTop="13px"
+        android:paddingBottom="15px"
+        android:gravity="left|center_vertical"
+        android:textColor="#FFFFFF"
+        android:background="#000000"
+    />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Party Governance"
+        android:paddingTop="13px"
+        android:paddingBottom="15px"
+        android:gravity="left|center_vertical"
+        android:textColor="#000000"
+    />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Messages"
+        android:paddingTop="13px"
+        android:paddingBottom="15px"
+        android:gravity="left|center_vertical"
+        android:textColor="#000000"
+        android:onClick="openMessages"
+    />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Events"
+        android:paddingTop="13px"
+        android:paddingBottom="15px"
+        android:gravity="left|center_vertical"
+        android:textColor="#000000"
+    />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Policy Stands"
+        android:paddingTop="13px"
+        android:paddingBottom="15px"
+        android:gravity="left|center_vertical"
+        android:textColor="#000000"
+    />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Connect with US"
+        android:paddingTop="13px"
+        android:paddingBottom="15px"
+        android:gravity="left|center_vertical"
+        android:onClick="openSocialMedia"
+    />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Branch Network"
+        android:paddingTop="13px"
+        android:paddingBottom="15px"
+        android:gravity="left|center_vertical"
+        android:textColor="#000000"
+    />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Exit"
+        android:paddingTop="13px"
+        android:paddingBottom="15px"
+        android:gravity="left|center_vertical"
+        android:textColor="#000000"
+        android:onClick="exitApplication"
+    />
+</LinearLayout>
+
