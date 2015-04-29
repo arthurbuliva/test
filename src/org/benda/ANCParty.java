@@ -50,6 +50,13 @@ public class ANCParty extends Activity
         setContentView(R.layout.connect);
     }
 
+    public void openBranchNetwork(View view)
+    {
+        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("http://69.28.82.241/test/leaflet/"));
+        startActivity(i);
+        finish();
+    }
+
     /**
      * Called when the user clicks the Send button
      */

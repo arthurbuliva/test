@@ -69,6 +69,7 @@
         android:paddingTop="13px"
         android:paddingBottom="15px"
         android:gravity="left|center_vertical"
+        android:onClick="openBranchNetwork"
         style="@android:style/Widget.Holo.Button"
     />
     <Button

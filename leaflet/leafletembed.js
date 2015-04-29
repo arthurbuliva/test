@@ -36,7 +36,7 @@ function initmap()
     map.on('locationfound', onLocationFound);
     map.on('locationerror', onLocationError);
 
-    map.locate({setView: true, maxZoom: 16});
+//    map.locate({setView: true, maxZoom: 16});
 
     L.marker([-1.2833, 36.81667], {}).addTo(map).bindPopup("Head Office, Riverside Drive, National, Nairobi");
     L.marker([-4.0500, 39.6667], {}).addTo(map).bindPopup("Coast Office, Nkurumah Road, Regional, Mombasa");
