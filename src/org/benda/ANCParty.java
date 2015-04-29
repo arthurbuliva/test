@@ -134,12 +134,12 @@ public class ANCParty extends Activity
             bufferedReader = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 
             StringBuffer stringBuffer = new StringBuffer("");
-            String line = "";
+            String line;
 
             String NL = System.getProperty("line.separator");
             while ((line = bufferedReader.readLine()) != null)
             {
-                stringBuffer.append(line + NL);
+                stringBuffer.append(line).append(NL);
                 System.out.print(stringBuffer);
             }
             bufferedReader.close();
