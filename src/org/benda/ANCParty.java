@@ -20,6 +20,8 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.CoreProtocolPNames;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class ANCParty extends Activity
 {
@@ -96,21 +98,54 @@ public class ANCParty extends Activity
         {
             public void run()
             {
-//                tv.setText(Html.fromHtml(executeHttpGet("http://en.wikipedia.org/wiki/United_Democratic_Forum_Party")));
 
-                String staticData = "<p>The <b>United Democratic Forum Party (UDFP)</b> "
-                        + "is a Kenyan political party founded in 2012, by a cross "
-                        + "section of younger members of Kenya's 10th parliament under "
-                        + "the premise of steering reforms to Kenya's governance "
-                        + "and boosting economic growth. "
-                        + "Deputy Prime Minister <a title='Musalia Mudavadi' "
-                        + "href='/wiki/Musalia_Mudavadi'>Musalia Mudavadi</a> "
-                        + "has expressed interest in becoming the party's presidential "
-                        + "candidate in the 2013 Kenyan general election.</p>";
+                StringBuilder message = new StringBuilder();
 
-                tv.setText(Html.fromHtml(staticData));
+                try
+                {
+                    // Create a JSON Object
+                    JSONObject messageObject = new JSONObject(executeHttpGet("http://anc.or.ke/?q=android-messages"));
+
+                    // Get the nodes as an array
+                    JSONArray nodesArray = messageObject.getJSONArray("nodes");
+
+                    // To get the items from the array
+                    for (int i = 0; i < nodesArray.length(); i++)
+                    {
+
+                        JSONObject oneObject = nodesArray.getJSONObject(i);
+
+                        // Pulling items from the array
+                        // Get the node values as an array
+                        JSONObject nodeObject = nodesArray.getJSONObject(i);
+
+                        String nodeDataArray = nodeObject.getString("node");
+
+                        JSONObject nodeData = new JSONObject(nodeDataArray);
+
+                        String title = (String) nodeData.get("title");
+                        String summary = (String) nodeData.get("Summary");
+
+                        message.append("<h1>")
+                                .append(title)
+                                .append("</h1>");
+
+                        message.append("<p>")
+                                .append(summary)
+                                .append("</p>");
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    message.append("Error: ").append(ex.toString());
+                }
+
+                tv.setText(Html.fromHtml(message.toString()));
+
             }
-        }, 3000);
+        }, 1000);
 
     }
 
@@ -147,11 +182,9 @@ public class ANCParty extends Activity
             while ((line = bufferedReader.readLine()) != null)
             {
                 stringBuffer.append(line).append(NL);
-                System.out.print(stringBuffer);
             }
             bufferedReader.close();
             String page = stringBuffer.toString();
-            System.out.println(page + "page");
             return page;
         }
         catch (Exception ex)
