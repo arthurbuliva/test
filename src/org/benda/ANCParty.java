@@ -105,7 +105,7 @@ public class ANCParty extends Activity
                 try
                 {
                     // Create a JSON Object
-                    JSONObject messageObject = new JSONObject(executeHttpGet("http://anc.or.ke/?q=android-messages"));
+                    JSONObject messageObject = new JSONObject(executeHttpGet("http://anc.or.ke/?q=messages/json"));
 
                     // Get the nodes as an array
                     JSONArray nodesArray = messageObject.getJSONArray("nodes");
@@ -133,6 +133,76 @@ public class ANCParty extends Activity
 
                         message.append("<p>")
                                 .append(summary)
+                                .append("</p>");
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    message.append("Error: ").append(ex.toString());
+                }
+
+                tv.setText(Html.fromHtml(message.toString()));
+
+            }
+        }, 1000);
+
+    }
+
+    public void openEvents(View view)
+    {
+        setContentView(R.layout.events);
+
+        final TextView tv = (TextView) findViewById(R.id.EventsTextView);
+
+        tv.setMovementMethod(new ScrollingMovementMethod());
+
+        tv.setText(R.string.wait);
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable()
+        {
+            public void run()
+            {
+
+                StringBuilder message = new StringBuilder();
+
+                try
+                {
+                    // Create a JSON Object
+                    JSONObject messageObject = new JSONObject(executeHttpGet("http://anc.or.ke/?q=events/json"));
+
+                    // Get the nodes as an array
+                    JSONArray nodesArray = messageObject.getJSONArray("nodes");
+
+                    // To get the items from the array
+                    for (int i = 0; i < nodesArray.length(); i++)
+                    {
+
+                        JSONObject oneObject = nodesArray.getJSONObject(i);
+
+                        // Pulling items from the array
+                        // Get the node values as an array
+                        JSONObject nodeObject = nodesArray.getJSONObject(i);
+
+                        String nodeDataArray = nodeObject.getString("node");
+
+                        JSONObject nodeData = new JSONObject(nodeDataArray);
+
+                        String title = (String) nodeData.get("title");
+                        String venue = (String) nodeData.get("Venue");
+                        String dateTime = (String) nodeData.get("Date and Time");
+
+                        message.append("<h1>")
+                                .append(title)
+                                .append("</h1>");
+
+                        message.append("<p>Venue: ")
+                                .append(venue)
+                                .append("<br />")
+                                .append("Date and Time: ")
+                                .append(dateTime)
                                 .append("</p>");
 
                     }
